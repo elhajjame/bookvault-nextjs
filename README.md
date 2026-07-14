@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## BookVault – Digital Library Management System
 
-## Getting Started
+BookVault is a modern Full Stack Library Management System built with Next.js, TypeScript, MongoDB, and Mongoose. It provides an intuitive interface for managing a digital library, allowing users to add, update, browse, search, and remove books with ease.
 
-First, run the development server:
+The application showcases the core Full Stack capabilities of Next.js, including Route Handlers, server-side data validation with Zod, dynamic routing, and seamless frontend-to-backend communication. Designed with a clean, responsive, and elegant user interface, BookVault delivers a smooth experience across desktop, tablet, and mobile devices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Features
+📚 Browse the complete library catalog
+➕ Add new books
+✏️ Edit existing books
+🗑️ Delete books with confirmation
+🔍 Search books by title or author
+🏷️ Filter books by availability
+📖 View detailed information for each book
+✅ Server-side validation using Zod
+💾 MongoDB database with Mongoose
+📱 Fully responsive modern interface
+⚡ Built with the Next.js App Router and Route Handlers
