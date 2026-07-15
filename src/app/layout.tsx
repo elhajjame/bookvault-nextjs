@@ -1,6 +1,4 @@
-
 import "./globals.css";
-
 
 export default function RootLayout({
   children,
@@ -8,9 +6,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-    >
-      <body className="">{children}</body>
+    <html>
+      <body className="bg-ivory-bg text-[#1A1A1A]">
+        {children}
+        <div></div>
+      </body>
     </html>
   );
 }
