@@ -1,5 +1,9 @@
 import { BookInput, BookSchema } from "@/app/lib/validators";
-import { getBookById, updateBook } from "@/app/services/book.service";
+import {
+  deleteBook,
+  getBookById,
+  updateBook,
+} from "@/app/services/book.service";
 import { NextRequest, NextResponse } from "next/server";
 import { ZodError } from "zod";
 
