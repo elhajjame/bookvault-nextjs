@@ -24,14 +24,14 @@ export async function createBook(data: BookInput) {
   return Book.create(data);
 }
 
-export async function updateBook(id: string, data) {
+export async function updateBook(id: string, data: Partial<BookInput>) {
   await connectDb();
 
   return Book.findByIdAndUpdate(id, data, { new: true, runValidator: true });
 }
 
 export async function deleteBook(id: string) {
-  await connectDB();
+  await connectDb();
 
   return Book.findByIdAndDelete(id);
 }
