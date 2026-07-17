@@ -10,7 +10,6 @@ export interface IBook extends Document {
   available: boolean;
   createdAt: Date;
   updatedAt: Date;
-
 }
 
 const BookSchema = new Schema<IBook>(
