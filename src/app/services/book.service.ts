@@ -15,7 +15,11 @@ export async function getBookById(id: string) {
 }
 
 export async function createBook(data: BookInput) {
-  const existing = await Book.findOne({ isbn: data.isbn });
+  await connectDb();
+
+  const existing = await Book.findOne({
+    isbn: data.isbn,
+  });
 
   if (existing) {
     throw new Error("A book with this ISBN already exists.");
