@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Calendar, MapPin, Layers, Eye, Pen, Trash2 } from "lucide-react";
 import { IBook } from "@/app/models/Book";
 interface BookCardProps {
@@ -6,18 +5,17 @@ interface BookCardProps {
   onDelete?: (id: string) => void;
 }
 export default function BookCard({ book }: BookCardProps) {
-  console.log("book data", book);
+  console.log(book.imageUrl);
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-ivory-border bg-ivory-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-[#2A201B] dark:bg-[#1C1612]">
       {/* Cover */}
       <div className="relative aspect-[5/6] overflow-hidden bg-ivory-hover dark:bg-[#120E0B] flex items-center justify-center border-b border-ivory-border/50 dark:border-[#2A201B]/50 cursor-pointer">
-        {/* <Image
+        <img
           src={book.imageUrl}
           alt={book.title}
-          width={600}
-          height={800}
+          loading="lazy"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        /> */}
+        />
 
         {/* Availability */}
         <div className="absolute right-4 top-4 z-20">

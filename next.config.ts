@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.squarespace-cdn.com",
+        hostname: "covers.openlibrary.org",
       },
     ],
   },
