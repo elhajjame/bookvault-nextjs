@@ -57,7 +57,7 @@ const BookSchema = new Schema<IBook>(
 
     imageUrl: {
       type: String,
-      required: true,
+      default: "",
     },
   },
   {

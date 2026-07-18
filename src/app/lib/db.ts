@@ -1,19 +1,21 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const mongodbUri = process.env.MONGODB_URI;
 
-console.log("test", MONGODB_URI);
-if (!MONGODB_URI) {
+if (!mongodbUri || typeof mongodbUri !== "string") {
   throw new Error("Please define the MONGODB_URI environment variable.");
 }
-const cached = global.mongoose || {
+
+const MONGODB_URI: string = mongodbUri;
+
+const cached = globalThis.mongooseCache ?? {
   conn: null,
   promise: null,
 };
 
-global.mongoose = cached;
+globalThis.mongooseCache = cached;
 
-export async function connectDb(): Promise<typeof mongoose> {
+export async function connectDb(): Promise<mongoose.Mongoose> {
   if (cached.conn) {
     return cached.conn;
   }

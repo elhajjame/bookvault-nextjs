@@ -17,6 +17,12 @@ export const BookSchema = z.object({
     .min(1000, "Enter a valid publication year.")
     .max(new Date().getFullYear(), "Publication year cannot be in the future."),
 
+  pages: z
+    .number({
+      error: "Pages must be a number.",
+    })
+    .positive(),
+
   description: z
     .string()
     .trim()

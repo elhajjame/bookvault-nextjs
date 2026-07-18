@@ -25,49 +25,36 @@ export default function BookCard({ book }: BookCardProps) {
           </span>
         </div>
 
-        {/* Category */}
         <div className="absolute bottom-4 left-4 z-20">
           <span className="rounded-md border border-white/10 bg-walnut/80 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-white backdrop-blur-sm dark:bg-black/75">
-            History
+            {book.category}
           </span>
         </div>
       </div>
 
-      {/* Content */}
       <div className="flex flex-1 flex-col justify-between p-2">
         <div className="cursor-pointer space-y-2">
-          {/* ISBN + Year */}
           <div className="flex items-center justify-between">
             <span className="font-mono text-xs text-zinc-400">{book.isbn}</span>
 
             <span className="flex items-center gap-1 text-xs font-light text-zinc-500 dark:text-zinc-400">
               <Calendar className="h-3 w-3 text-bronze" />
-              2012
+              {book.publicationYear}
             </span>
           </div>
 
-          {/* Title */}
           <h3 className="line-clamp-1 font-serif text-lg font-semibold text-walnut transition-colors group-hover:text-bronze dark:text-ivory-card">
-            A History of the World in Twelve Maps
+            {book.title}
           </h3>
 
-          {/* Author */}
           <p className="font-sans text-xs font-light italic text-zinc-500 dark:text-zinc-400">
-            by Jerry Brotton
+            by {book.author}
           </p>
 
-          {/* Meta */}
           <div className="flex items-center gap-3 pt-2 font-sans text-xs text-zinc-400 dark:text-zinc-500">
             <span className="flex items-center gap-1">
-              <MapPin className="h-3 w-3 text-bronze" />
-              Aisle 5, Shelf A
-            </span>
-
-            <span>•</span>
-
-            <span className="flex items-center gap-1">
               <Layers className="h-3 w-3 text-bronze" />
-              544 pages
+              {} pages
             </span>
           </div>
         </div>

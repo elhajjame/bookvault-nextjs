@@ -36,7 +36,7 @@ export default function HeroSection() {
             onClick={() => router.push("/catalog")}
             className="flex items-center gap-2 bg-[#866543] hover:bg-[#A67C52] dark:bg-[#A67C52] dark:hover:bg-[#866543] text-white px-7 py-4 rounded-xl text-base font-medium shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
           >
-            <span>Browse Collection</span>
+            <span>Discover Books</span>
             <ChevronRight size={18} />
           </button>
 
