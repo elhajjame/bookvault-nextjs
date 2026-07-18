@@ -14,11 +14,11 @@ export default function BooksPage() {
     fetchBooks();
   }, []);
 
-  const filteredBooks = books.filter((book) =>
-    `${book.title} ${book.author} ${book.category}`
-      .toLowerCase()
-      .includes(search.toLowerCase()),
-  );
+//   const filteredBooks = books.filter((book) =>
+//     `${book.title} ${book.author} ${book.category}`
+//       .toLowerCase()
+//       .includes(search.toLowerCase()),
+//   );
 
   if (loading) return <p>Loading...</p>;
 
@@ -26,7 +26,7 @@ export default function BooksPage() {
     <>
       {/* <SearchBar search={search} setSearch={setSearch} /> */}
 
-      <BookGrid books={filteredBooks} />
+      <BookGrid books={books} />
     </>
   );
 }

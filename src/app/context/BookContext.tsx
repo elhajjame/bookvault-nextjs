@@ -22,14 +22,22 @@ export function BookProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   async function fetchBooks() {
+    setLoading(true);
+
     try {
       const res = await fetch("/api/books");
-      console.log("res", res);
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch books");
+      }
+
       const data = await res.json();
-      console.log(data);
-      setBooks(data.books);
+      const nextBooks = Array.isArray(data) ? data : (data?.books ?? []);
+
+      setBooks(nextBooks);
     } catch (err) {
-      console.error(err);
+      console.error("Failed to fetch books:", err);
+      setBooks([]);
     } finally {
       setLoading(false);
     }

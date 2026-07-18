@@ -10,6 +10,7 @@ export interface IBook extends Document {
   available: boolean;
   createdAt: Date;
   updatedAt: Date;
+  imageUrl: string;
 }
 
 const BookSchema = new Schema<IBook>(
@@ -52,6 +53,11 @@ const BookSchema = new Schema<IBook>(
     available: {
       type: Boolean,
       default: true,
+    },
+
+    imageUrl: {
+      type: String,
+      required: true,
     },
   },
   {
