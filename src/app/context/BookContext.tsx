@@ -16,6 +16,7 @@ interface BookContextType {
   error: string | null;
   fetchBooks: () => Promise<void>;
   fetchBookById: (id: string) => Promise<void>;
+  deleteBook: (id: string) => Promise<void>;
 }
 
 const BookContext = createContext<BookContextType | undefined>(undefined);
@@ -76,6 +77,22 @@ export function BookProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const deleteBook = async (id: string) => {
+    try {
+      const res = await fetch(`/api/books/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to delete book");
+      }
+
+      setBooks((prev) => prev.filter((book) => book._id.toString() !== id));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <BookContext.Provider
       value={{
@@ -85,6 +102,7 @@ export function BookProvider({ children }: { children: ReactNode }) {
         book,
         fetchBooks,
         fetchBookById,
+        deleteBook,
       }}
     >
       {children}

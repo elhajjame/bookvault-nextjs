@@ -6,11 +6,11 @@ interface BookCardProps {
   onDelete?: (id: string) => void;
 }
 export default function BookCard({ book }: BookCardProps) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-ivory-border bg-ivory-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-[#2A201B] dark:bg-[#1C1612]">
       {/* Cover */}
-      <div className="relative aspect-[5/6] overflow-hidden bg-ivory-hover dark:bg-[#120E0B] flex items-center justify-center border-b border-ivory-border/50 dark:border-[#2A201B]/50 cursor-pointer">
+      <div className="relative aspect-[5/6] overflow-hidden bg-ivory-hover dark:bg-[#120E0B] flex items-center justify-center border-b border-ivory-border/50 dark:border-[#2A201B]/50 ">
         <img
           src={book.imageUrl}
           alt={book.title}
@@ -62,23 +62,24 @@ export default function BookCard({ book }: BookCardProps) {
 
         {/* Actions */}
         <div className="mt-3 flex items-center justify-between gap-2 border-t border-ivory-border pt-3 dark:border-[#2A201B]">
-          <button 
-          onClick={()=> router.push(`/books/${book._id}`)}
-          className="group/btn flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-ivory-hover px-3 py-2 text-xs font-medium text-walnut transition-all hover:bg-walnut hover:text-white dark:bg-[#2A201B] dark:text-zinc-300 dark:hover:bg-bronze">
-            <Eye className="h-[13px] w-[13px] text-bronze transition-colors group-hover/btn:text-white" />
+          <button
+            onClick={() => router.push(`/books/${book._id}`)}
+            className="cursor-pointer group/btn flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-ivory-hover px-3 py-2 text-xs font-medium text-walnut transition-all hover:bg-walnut hover:text-white dark:bg-[#2A201B] dark:text-zinc-300 dark:hover:bg-bronze"
+          >
+            <Eye className=" h-[13px] w-[13px] text-bronze transition-colors group-hover/btn:text-white" />
             <span>Details</span>
           </button>
 
           <button
             title="Edit"
-            className="rounded-lg border border-transparent bg-ivory-hover p-2 text-zinc-600 transition-all hover:border-ivory-border hover:bg-white hover:text-bronze dark:bg-[#2A201B] dark:text-zinc-400 dark:hover:border-[#2A201B] dark:hover:bg-[#1C1612] dark:hover:text-gold"
+            className="cursor-pointer rounded-lg border border-transparent bg-ivory-hover p-2 text-zinc-600 transition-all hover:border-ivory-border hover:bg-white hover:text-bronze dark:bg-[#2A201B] dark:text-zinc-400 dark:hover:border-[#2A201B] dark:hover:bg-[#1C1612] dark:hover:text-gold"
           >
             <Pen className="h-[13px] w-[13px]" />
           </button>
 
           <button
             title="Delete"
-            className="rounded-lg border border-transparent bg-ivory-hover p-2 text-zinc-500 transition-all hover:border-red-200 hover:bg-red-50 hover:text-[#A94442] dark:bg-[#2A201B] dark:hover:border-red-950 dark:hover:bg-red-950/20 dark:hover:text-red-400"
+            className="cursor-pointer rounded-lg border border-transparent bg-ivory-hover p-2 text-zinc-500 transition-all hover:border-red-200 hover:bg-red-50 hover:text-[#A94442] dark:bg-[#2A201B] dark:hover:border-red-950 dark:hover:bg-red-950/20 dark:hover:text-red-400"
           >
             <Trash2 className="h-[13px] w-[13px]" />
           </button>
