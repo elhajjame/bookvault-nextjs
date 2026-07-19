@@ -1,11 +1,12 @@
 import { Calendar, MapPin, Layers, Eye, Pen, Trash2 } from "lucide-react";
 import { IBook } from "@/app/models/Book";
+import { useRouter } from "next/navigation";
 interface BookCardProps {
   book: IBook;
   onDelete?: (id: string) => void;
 }
 export default function BookCard({ book }: BookCardProps) {
-  console.log(book.imageUrl);
+  const router = useRouter()
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-ivory-border bg-ivory-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-[#2A201B] dark:bg-[#1C1612]">
       {/* Cover */}
@@ -61,7 +62,9 @@ export default function BookCard({ book }: BookCardProps) {
 
         {/* Actions */}
         <div className="mt-3 flex items-center justify-between gap-2 border-t border-ivory-border pt-3 dark:border-[#2A201B]">
-          <button className="group/btn flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-ivory-hover px-3 py-2 text-xs font-medium text-walnut transition-all hover:bg-walnut hover:text-white dark:bg-[#2A201B] dark:text-zinc-300 dark:hover:bg-bronze">
+          <button 
+          onClick={()=> router.push(`/books/${book._id}`)}
+          className="group/btn flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-ivory-hover px-3 py-2 text-xs font-medium text-walnut transition-all hover:bg-walnut hover:text-white dark:bg-[#2A201B] dark:text-zinc-300 dark:hover:bg-bronze">
             <Eye className="h-[13px] w-[13px] text-bronze transition-colors group-hover/btn:text-white" />
             <span>Details</span>
           </button>
