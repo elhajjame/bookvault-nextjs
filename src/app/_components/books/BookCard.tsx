@@ -72,6 +72,7 @@ export default function BookCard({ book }: BookCardProps) {
 
           <button
             title="Edit"
+            onClick={() => router.push(`/books/edit?id=${book._id}`)}
             className="cursor-pointer rounded-lg border border-transparent bg-ivory-hover p-2 text-zinc-600 transition-all hover:border-ivory-border hover:bg-white hover:text-bronze dark:bg-[#2A201B] dark:text-zinc-400 dark:hover:border-[#2A201B] dark:hover:bg-[#1C1612] dark:hover:text-gold"
           >
             <Pen className="h-[13px] w-[13px]" />

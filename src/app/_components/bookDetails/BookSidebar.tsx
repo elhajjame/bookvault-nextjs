@@ -37,6 +37,7 @@ export default function BookSidebar({ handelDelete, book }: BookDetailsProps) {
       <div className="flex items-center justify-between gap-4 rounded-2xl border border-ivory-border bg-white p-6 shadow-sm dark:border-[#2A201B] dark:bg-[#1C1612]">
         <button
           type="button"
+          onClick={() => (window.location.href = `/books/edit?id=${book._id}`)}
           className="cursor-pointer flex flex-1 items-center justify-center gap-2 rounded-xl border border-ivory-border px-4 py-3 text-sm font-medium text-walnut transition-all hover:border-bronze hover:bg-ivory-hover dark:border-[#2A201B] dark:text-zinc-200 dark:hover:border-gold dark:hover:bg-[#2A201B]"
         >
           <Pen size={15} className="text-bronze" />

@@ -16,6 +16,7 @@ interface BookContextType {
   error: string | null;
   fetchBooks: () => Promise<void>;
   fetchBookById: (id: string) => Promise<void>;
+  updateBook: (id: string, data: Partial<IBook>) => Promise<void>;
   deleteBook: (id: string) => Promise<void>;
 }
 
@@ -77,6 +78,35 @@ export function BookProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const updateBook = async (id: string, data: Partial<IBook>) => {
+    try {
+      const res = await fetch(`/api/books/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to update book");
+      }
+
+      const updatedBook = await res.json();
+
+      setBooks((prev) =>
+        prev.map((item) => (String(item._id) === id ? updatedBook : item)),
+      );
+      setBook((currentBook) =>
+        currentBook && String(currentBook._id) === id
+          ? updatedBook
+          : currentBook,
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const deleteBook = async (id: string) => {
     try {
       const res = await fetch(`/api/books/${id}`, {
@@ -87,7 +117,7 @@ export function BookProvider({ children }: { children: ReactNode }) {
         throw new Error("Failed to delete book");
       }
 
-      setBooks((prev) => prev.filter((book) => book._id.toString() !== id));
+      setBooks((prev) => prev.filter((book) => String(book._id) !== id));
     } catch (error) {
       console.error(error);
     }
@@ -102,6 +132,7 @@ export function BookProvider({ children }: { children: ReactNode }) {
         book,
         fetchBooks,
         fetchBookById,
+        updateBook,
         deleteBook,
       }}
     >

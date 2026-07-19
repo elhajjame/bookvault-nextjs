@@ -77,7 +77,7 @@ export default function BookForm() {
               type="text"
               required
               placeholder="e.g. Meditations"
-              className="w-full rounded-xl border border-ivory-border bg-white px-4.5 py-3.5 text-sm text-walnut focus:outline-none focus:ring-1 focus:ring-bronze dark:border-[#2A201B] dark:bg-[#120E0B] dark:text-zinc-100"
+              className="w-full px-4.5 py-3.5 rounded-xl border border-ivory-border dark:border-[#2A201B] bg-white dark:bg-[#120E0B] text-walnut dark:text-zinc-100 text-sm focus:outline-none focus:ring-1 focus:ring-bronze"
             />
           </div>
 
@@ -97,7 +97,7 @@ export default function BookForm() {
                 type="text"
                 required
                 placeholder="e.g. Marcus Aurelius"
-                className="w-full rounded-xl border border-ivory-border bg-white px-4.5 py-3.5 text-sm text-walnut focus:outline-none focus:ring-1 focus:ring-bronze dark:border-[#2A201B] dark:bg-[#120E0B] dark:text-zinc-100"
+                className="w-full px-4.5 py-3.5 rounded-xl border border-ivory-border dark:border-[#2A201B] bg-white dark:bg-[#120E0B] text-walnut dark:text-zinc-100 text-sm focus:outline-none focus:ring-1 focus:ring-bronze"
               />
             </div>
 
@@ -141,7 +141,7 @@ export default function BookForm() {
                 type="text"
                 required
                 placeholder="e.g. 978-0140449334"
-                className="w-full rounded-xl border border-ivory-border bg-white px-4.5 py-3.5 text-sm text-walnut focus:outline-none focus:ring-1 focus:ring-bronze dark:border-[#2A201B] dark:bg-[#120E0B] dark:text-zinc-100"
+                className="w-full px-4.5 py-3.5 rounded-xl border border-ivory-border dark:border-[#2A201B] bg-white dark:bg-[#120E0B] text-walnut dark:text-zinc-100 text-sm focus:outline-none focus:ring-1 focus:ring-bronze"
               />
             </div>
 
@@ -160,7 +160,7 @@ export default function BookForm() {
                 type="number"
                 required
                 placeholder="e.g. 180"
-                className="w-full rounded-xl border border-ivory-border bg-white px-4.5 py-3.5 text-sm text-walnut focus:outline-none focus:ring-1 focus:ring-bronze dark:border-[#2A201B] dark:bg-[#120E0B] dark:text-zinc-100"
+                className="w-full px-4.5 py-3.5 rounded-xl border border-ivory-border dark:border-[#2A201B] bg-white dark:bg-[#120E0B] text-walnut dark:text-zinc-100 text-sm focus:outline-none focus:ring-1 focus:ring-bronze"
               />
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function BookForm() {
                 onChange={handleChange}
                 type="url"
                 placeholder="e.g. https://images.unsplash.com/..."
-                className="w-full rounded-xl border border-ivory-border bg-white px-4.5 py-3.5 text-sm text-walnut focus:outline-none focus:ring-1 focus:ring-bronze dark:border-[#2A201B] dark:bg-[#120E0B] dark:text-zinc-100"
+                className="w-full px-4.5 py-3.5 rounded-xl border border-ivory-border dark:border-[#2A201B] bg-white dark:bg-[#120E0B] text-walnut dark:text-zinc-100 text-sm focus:outline-none focus:ring-1 focus:ring-bronze"
               />
 
               <p className="text-[10px] leading-relaxed text-zinc-400">
@@ -205,7 +205,7 @@ export default function BookForm() {
                 type="number"
                 required
                 placeholder="e.g. 304"
-                className="w-full rounded-xl border border-ivory-border bg-white px-4.5 py-3.5 text-sm text-walnut focus:outline-none focus:ring-1 focus:ring-bronze dark:border-[#2A201B] dark:bg-[#120E0B] dark:text-zinc-100"
+                className="w-full px-4.5 py-3.5 rounded-xl border border-ivory-border dark:border-[#2A201B] bg-white dark:bg-[#120E0B] text-walnut dark:text-zinc-100 text-sm focus:outline-none focus:ring-1 focus:ring-bronze"
               />
             </div>
           </div>
